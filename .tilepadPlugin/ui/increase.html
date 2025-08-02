@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <h1>Counter: <span id="counterValue"></span></h1>
+
+    <div class="tile-item">
+        <label class="tile-label" for="action">Amount</label>
+        <input class="tile-input" type="number" id="amount">
+        <p class="tile-description">Amount to increase by</p>
+    </div>
+</body>
+
+<script>
+    const amountInput = document.getElementById("amount");
+    const countValue = document.getElementById("counterValue");
+
+    // Get the current amount
+    tilepad.tile.getProperties()
+        .then((properties) => {
+            amountInput.value = "" + (properties.amount ?? 1);
+        })
+
+    tilepad.plugin.onMessage((message) => {
+        switch (message.type) {
+            case "COUNTER": {
+                countValue.innerText = `${message.value}`
+            }
+        }
+    });
+
+    tilepad.plugin.send({
+        type: "GET_COUNTER"
+    });
+
+    // Handle changing the action
+    amountInput.onchange = (event) => {
+        const value = event.target.value;
+        tilepad.tile.setProperty("amount", Number(value));
+    };
+</script>
+
+</html>

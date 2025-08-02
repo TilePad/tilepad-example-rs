@@ -1,0 +1,15 @@
+[package]
+name = "tilepad-plugin"
+version = "0.0.1"
+edition = "2024"
+
+[dependencies]
+# Plugin SDK 
+tilepad-plugin-sdk = "0.4.0"
+
+# Async runtime
+tokio = { version = "1.44.1", features = ["full"] }
+
+# Serialization
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"

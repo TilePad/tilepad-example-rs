@@ -1,0 +1,61 @@
+{
+    "plugin": {
+        "id": "com.jacobtread.tilepad.example",
+        "name": "Rust Counter Example",
+        "version": "0.0.1",
+        "authors": [
+            "Your Name"
+        ],
+        "description": "Example Rust counter plugin"
+    },
+    "category": {
+        "label": "Counter",
+        "icon": "images/counter.svg"
+    },
+    "bin": {
+        "native": [
+            {
+                "os": "windows",
+                "arch": "x64",
+                "path": "bin/plugin-windows-x64.exe"
+            },
+            {
+                "os": "windows",
+                "arch": "x86",
+                "path": "bin/plugin-windows-x86.exe"
+            },
+            {
+                "os": "linux",
+                "arch": "x64",
+                "path": "bin/plugin-linux-x64"
+            },
+            {
+                "os": "linux",
+                "arch": "x86",
+                "path": "bin/plugin-linux-x86"
+            }
+        ]
+    },
+    "actions": {
+        "increase": {
+            "label": "Increase",
+            "description": "Button to increase the counter",
+            "inspector": "ui/increase.html",
+            "icon": "images/increase.svg",
+            "icon_options": {
+                "padding": 30,
+                "background_color": "#000000"
+            }
+        },
+        "decrease": {
+            "label": "Decrease",
+            "description": "Button to decrease the counter",
+            "inspector": "ui/decrease.html",
+            "icon": "images/decrease.svg",
+            "icon_options": {
+                "padding": 30,
+                "background_color": "#000000"
+            }
+        }
+    }
+}
