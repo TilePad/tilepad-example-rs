@@ -1,11 +1,10 @@
 {
+    "$schema": "https://tilepad.pages.dev/schemas/0.9.0/plugins.json",
     "plugin": {
         "id": "com.jacobtread.tilepad.example",
         "name": "Rust Counter Example",
         "version": "0.0.1",
-        "authors": [
-            "Your Name"
-        ],
+        "authors": ["Your Name"],
         "description": "Example Rust counter plugin"
     },
     "category": {
